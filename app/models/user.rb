@@ -13,4 +13,7 @@ class User < ApplicationRecord
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :email, :presence => true
   has_secure_password
+
+  has_many(:clothings, { :class_name => "Clothing", :foreign_key => "user_id", :dependent => :destroy })
+  has_many(:outfits, { :class_name => "Outfit", :foreign_key => "user_id", :dependent => :destroy })
 end

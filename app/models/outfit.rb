@@ -8,4 +8,6 @@
 #  user_id    :integer
 #
 class Outfit < ApplicationRecord
+  belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id", :counter_cache => true })
+  has_many(:outfit_clothings, { :class_name => "OutfitClothing", :foreign_key => "outfit_id", :dependent => :destroy })
 end
