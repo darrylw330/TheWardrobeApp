@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Clothing #<%= @the_clothing.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/clothings">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_clothing/<%= @the_clothing.id %>">
+          Delete clothing
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_clothing.user_id %>
+      </dd>
+
+      <dt>
+        Brand
+      </dt>
+      <dd>
+        <%= @the_clothing.brand %>
+      </dd>
+
+      <dt>
+        Color
+      </dt>
+      <dd>
+        <%= @the_clothing.color %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_clothing.image %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_clothing.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_clothing.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit clothing
+    </h2>
+
+    <form action="/modify_clothing/<%= @the_clothing.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_clothing.user_id %>">
+      </div>
+
+      <div>
+        <label for="brand_box">
+          Brand
+        </label>
+
+        <input type="text" id="brand_box" name="query_brand" value="<%= @the_clothing.brand %>">
+      </div>
+
+      <div>
+        <label for="color_box">
+          Color
+        </label>
+
+        <input type="text" id="color_box" name="query_color" value="<%= @the_clothing.color %>">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image" value="<%= @the_clothing.image %>">
+      </div>
+
+      <button>
+        Update clothing
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

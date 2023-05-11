@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Outfit clothing #<%= @the_outfit_clothing.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/outfit_clothings">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_outfit_clothing/<%= @the_outfit_clothing.id %>">
+          Delete outfit clothing
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Clothing
+      </dt>
+      <dd>
+        <%= @the_outfit_clothing.clothing_id %>
+      </dd>
+
+      <dt>
+        Outfit
+      </dt>
+      <dd>
+        <%= @the_outfit_clothing.outfit_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_outfit_clothing.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_outfit_clothing.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit outfit clothing
+    </h2>
+
+    <form action="/modify_outfit_clothing/<%= @the_outfit_clothing.id %>"  method="post" >
+      <div>
+        <label for="clothing_id_box">
+          Clothing
+        </label>
+
+        <input type="text" id="clothing_id_box" name="query_clothing_id" value="<%= @the_outfit_clothing.clothing_id %>">
+      </div>
+
+      <div>
+        <label for="outfit_id_box">
+          Outfit
+        </label>
+
+        <input type="text" id="outfit_id_box" name="query_outfit_id" value="<%= @the_outfit_clothing.outfit_id %>">
+      </div>
+
+      <button>
+        Update outfit clothing
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
