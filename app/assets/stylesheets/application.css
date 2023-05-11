@@ -12,3 +12,41 @@
  *
  *= require_self
  */
+
+ .button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white; /* Set font color to white */
+  font-family: 'DM Serif Display', serif; /* Apply DM Serif Display as the font */
+}
+
+body {
+  background-color: #3B8BEB;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/path/to/your/font/NotoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/path/to/your/font/NotoSans-Bold.ttf') format('truetype');
+}
+
+/* Apply Noto Sans as the font for the body or any specific elements */
+body, h1, p {
+  font-family: 'Noto Sans', sans-serif;
+}
