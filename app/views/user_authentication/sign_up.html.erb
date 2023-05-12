@@ -1,77 +1,40 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>The Wardrobe App</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-
-<body data-bs-spy="scroll" data-bs-target=".navbar-expand-sm" data-bs-offset="50">
-
-  <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/home">The Wardrobe App</a>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/user_sign_up">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user_sign_in">Sign In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user_sign_out">Sign Out</a>
-        </li>
-      </ul>
+<div class="container">
+  <div class="box">
+    <div class="tab">
     </div>
-  </nav>
+    <h1>Sign up</h1>
 
-  <div class="container">
-    <div class="box">
-      <div class="tab">
+    <form class="form" action="/insert_user" method="post">
+
+      <div class="form-group">
+        <label for="email_box">Email</label>
+        <input id="email_box" name="query_email" class="form-control" placeholder="Choose an email..." type="text">
       </div>
-      <h1>Sign up</h1>
 
-      <form class="form" action="/insert_user" method="post">
+      <div class="form-group">
+        <label for="username_box">Username</label>
+        <input type="text" id="username_box" name="query_username" class="form-control">
+      </div>
 
-        <div class="form-group">
-          <label for="email_box">Email</label>
-          <input id="email_box" name="query_email" class="form-control" placeholder="Choose an email..." type="text">
-        </div>
+      <div class="form-group">
+        <label for="password_box">Password</label>
+        <input id="password_box" name="query_password" class="form-control" placeholder="Choose a password..." type="password">
+      </div>
 
-        <div class="form-group">
-          <label for="username_box">Username</label>
-          <input type="text" id="username_box" name="query_username" class="form-control">
-        </div>
+      <div class="form-group">
+        <label for="password_confirmation_box">Password Confirmation</label>
+        <input id="password_confirmation_box" name="query_password_confirmation" class="form-control" placeholder="Confirm your password..." type="password">
+      </div>
 
-        <div class="form-group">
-          <label for="outfits_count_box">Outfits count</label>
-          <input type="text" id="outfits_count_box" name="query_outfits_count" class="form-control" placeholder="Enter the number of outfits...">
-        </div>
+      <button type="submit" class="btn btn-primary">
+        Sign up
+      </button>
+    </form>
 
-        <div class="form-group">
-          <label for="password_box">Password</label>
-          <input id="password_box" name="query_password" class="form-control" placeholder="Choose a password..." type="password">
-        </div>
+    <hr>
 
-        <div class="form-group">
-          <label for="password_confirmation_box">Password Confirmation</label>
-          <input id="password_confirmation_box" name="query_password_confirmation" class="form-control" placeholder="Confirm your password..." type="password">
-        </div>
-
-        <button type="submit" class="btn btn-primary">
-          Sign up
-        </button>
-      </form>
-
-      <hr>
-
-      <p>
-        Or, <a href="/user_sign_in">Sign in</a> instead.
-      </p>
-    </div>
+    <p>
+      Or, <a href="/user_sign_in">Sign in</a> instead.
+    </p>
   </div>
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+</div>

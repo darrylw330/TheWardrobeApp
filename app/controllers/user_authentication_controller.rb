@@ -41,11 +41,8 @@ class UserAuthenticationController < ApplicationController
     @user.email = params.fetch("query_email")
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
-    @user.outfits_count = params.fetch("query_outfits_count")
 
-    save_status = @user.save
-
-    if save_status == true
+    if @user.save
       session[:user_id] = @user.id
 
       redirect_to("/dashboard", { :notice => "User account created successfully." })
