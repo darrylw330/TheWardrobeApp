@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
   get "/home", to: "pages#home"
   get "/dashboard", to: "users#dashboard", as: "user_dashboard"
 

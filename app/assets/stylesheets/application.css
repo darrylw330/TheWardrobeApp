@@ -24,12 +24,43 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: white; /* Set font color to white */
-  font-family: 'DM Serif Display', serif; /* Apply DM Serif Display as the font */
+  color: white;
+  font-family: 'DM Serif Display', serif;
 }
 
 body {
   background-color: #3B8BEB;
+}
+
+.centered-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  width: 400px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #0D19A3;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 @font-face {
@@ -43,10 +74,11 @@ body {
   font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
+  font-size: x-large;
   src: url('/path/to/your/font/NotoSans-Bold.ttf') format('truetype');
 }
 
-/* Apply Noto Sans as the font for the body or any specific elements */
 body, h1, p {
+  position: relative;
   font-family: 'Noto Sans', sans-serif;
 }

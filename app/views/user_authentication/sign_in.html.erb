@@ -1,23 +1,63 @@
-<h1>Sign in</h1>
+<!DOCTYPE html>
+<html>
 
-<form action="/user_verify_credentials" method="post">
-  <div>
-    <label for="email_box">Email</label>
-    <input id="email_box" name="query_email" placeholder="Enter your email..." type="text">
+<head>
+  <title>The Wardrobe App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar-expand-sm" data-bs-offset="50">
+
+  <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home">The Wardrobe App</a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/user_sign_up">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user_sign_in">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user_sign_out">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="box">
+      <div class="home-tab">
+        <a href="/home">Home</a>
+      </div>
+      
+      <h1>Sign in</h1>
+      
+      <form class="form" action="/user_verify_credentials" method="post">
+        <div class="form-group">
+          <label for="email_box">Email</label>
+          <input id="email_box" name="query_email" class="form-control" placeholder="Enter your email..." type="text">
+        </div>
+      
+        <div class="form-group">
+          <label for="password_box">Password</label>
+          <input id="password_box" name="query_password" class="form-control" placeholder="Enter your password..." type="password">
+        </div>
+      
+        <button type="submit" class="btn btn-primary">
+          Sign in
+        </button>
+      </form>
+      
+      <hr>
+      
+      <p>
+        Or, <a href="/user_sign_up">Sign up</a> instead.
+      </p>
+    </div>
   </div>
 
-  <div>
-    <label for="password_box">Password</label>
-    <input id="password_box" name="query_password" placeholder="Enter your password..." type="password">
-  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 
-  <button>
-    Sign in
-  </button>
-</form>
-
-<hr>
-
-<p>
-  Or, <a href="/user_sign_up">Sign up</a> instead.
-</p>
+</html>

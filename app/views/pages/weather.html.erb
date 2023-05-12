@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>The Wardrobe App</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-
 <body data-bs-spy="scroll" data-bs-target=".navbar-expand-sm" data-bs-offset="50">
 
   <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
@@ -29,28 +27,26 @@
     </div>
   </nav>
 
-  <div id="section1" class="container-fluid bg-primary text-white" style="padding:100px 20px;">
-    <h1>Step 1</h1>
-    <p>Upload images of your Wardrobe!</p>
-    <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at
-      the navigation bar while scrolling!</p>
-  </div>
-
-  <div id="section2" class="container-fluid bg-primary text-white" style="padding:100px 20px;">
-    <h1>Step 2</h1>
-    <p>Let us generate your outfit!</p>
-    <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at
-      the navigation bar while scrolling!</p>
-  </div>
-
-  <div id="section3" class="container-fluid bg-primary text-white" style="padding:100px 20px;">
-    <h1>Step 3</h1>
-    <p>Never waste time thinking about what you should wear again!</p>
-    <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at
-      the navigation bar while scrolling!</p>
+  <div id="weather-container" class="container">
+    <h2>Current Weather</h2>
+    <div id="weather-info"></div>
   </div>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+  <script>
+    function getWeather(latitude, longitude) {
+      const apiKey = 'YOUR_WEATHER_API_KEY';
+      const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`;
 
-</html>
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const weatherContainer = document.getElementById('weather-info');
+          weatherContainer.innerHTML = `
+            <p>Temperature: ${data.current.temp_c}°C</p>
+            <p>Condition: ${data.current.condition.text}</p>
+            <img src="${data.current.condition.icon}" alt="Weather Icon">
+          `;
+        })
+        .catch(error => console.log(error
