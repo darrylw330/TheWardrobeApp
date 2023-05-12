@@ -1,91 +1,45 @@
 Rails.application.routes.draw do
- # get 'dashboard/index'
+  # Routes for the User account:
+  get "/user_sign_up", to: "user_authentication#sign_up_form"
+  post "/insert_user", to: "user_authentication#create"
+  get "/edit_user_profile", to: "user_authentication#edit_profile_form"
+  post "/modify_user", to: "user_authentication#update"
+  get "/cancel_user_account", to: "user_authentication#destroy"
+  get "/user_sign_in", to: "user_authentication#sign_in_form"
+  post "/user_verify_credentials", to: "user_authentication#create_cookie"
+  get "/user_sign_out", to: "user_authentication#destroy_cookies"
+
+  authenticated :user do
+    root to: "users#dashboard", as: "user_dashboard"
+  end
+
+  # Routes for the Outfit clothing resource:
+  post "/insert_outfit_clothing", to: "outfit_clothings#create"
+  get "/outfit_clothings", to: "outfit_clothings#index"
+  get "/outfit_clothings/:path_id", to: "outfit_clothings#show"
+  post "/modify_outfit_clothing/:path_id", to: "outfit_clothings#update"
+  get "/delete_outfit_clothing/:path_id", to: "outfit_clothings#destroy"
+
+  # Routes for the Outfit resource:
+  post "/insert_outfit", to: "outfits#create"
+  get "/outfits", to: "outfits#index"
+  get "/outfits/:path_id", to: "outfits#show"
+  post "/modify_outfit/:path_id", to: "outfits#update"
+  get "/delete_outfit/:path_id", to: "outfits#destroy"
+
+  # Routes for the Clothing resource:
+  post "/insert_clothing", to: "clothings#create"
+  get "/clothings", to: "clothings#index"
+  get "/clothings/:path_id", to: "clothings#show"
+  post "/modify_clothing/:path_id", to: "clothings#update"
+  get "/delete_clothing/:path_id", to: "clothings#destroy"
+
+  # Other routes...
+
+  # get 'dashboard/index'
   get "/home", to: "pages#home"
   get "/dashboard", to: "users#dashboard", as: "user_dashboard"
 
-  # Routes for the Outfit clothing resource:
-
-  # CREATE
-  post("/insert_outfit_clothing", { :controller => "outfit_clothings", :action => "create" })
-
-  # READ
-  get("/outfit_clothings", { :controller => "outfit_clothings", :action => "index" })
-
-  get("/outfit_clothings/:path_id", { :controller => "outfit_clothings", :action => "show" })
-
-  # UPDATE
-
-  post("/modify_outfit_clothing/:path_id", { :controller => "outfit_clothings", :action => "update" })
-
-  # DELETE
-  get("/delete_outfit_clothing/:path_id", { :controller => "outfit_clothings", :action => "destroy" })
-
-  #------------------------------
-
-  # Routes for the Outfit resource:
-
-  # CREATE
-  post("/insert_outfit", { :controller => "outfits", :action => "create" })
-
-  # READ
-  get("/outfits", { :controller => "outfits", :action => "index" })
-
-  get("/outfits/:path_id", { :controller => "outfits", :action => "show" })
-
-  # UPDATE
-
-  post("/modify_outfit/:path_id", { :controller => "outfits", :action => "update" })
-
-  # DELETE
-  get("/delete_outfit/:path_id", { :controller => "outfits", :action => "destroy" })
-
-  #------------------------------
-
-  # Routes for the Clothing resource:
-
-  # CREATE
-  post("/insert_clothing", { :controller => "clothings", :action => "create" })
-
-  # READ
-  get("/clothings", { :controller => "clothings", :action => "index" })
-
-  get("/clothings/:path_id", { :controller => "clothings", :action => "show" })
-
-  # UPDATE
-
-  post("/modify_clothing/:path_id", { :controller => "clothings", :action => "update" })
-
-  # DELETE
-  get("/delete_clothing/:path_id", { :controller => "clothings", :action => "destroy" })
-
-  #------------------------------
-
-  # Routes for the User account:
-
-  # SIGN UP FORM
-  get("/user_sign_up", { :controller => "user_authentication", :action => "sign_up_form" })
-  # CREATE RECORD
-  post("/insert_user", { :controller => "user_authentication", :action => "create" })
-
-  # EDIT PROFILE FORM
-  get("/edit_user_profile", { :controller => "user_authentication", :action => "edit_profile_form" })
-  # UPDATE RECORD
-  post("/modify_user", { :controller => "user_authentication", :action => "update" })
-
-  # DELETE RECORD
-  get("/cancel_user_account", { :controller => "user_authentication", :action => "destroy" })
-
-  # ------------------------------
-
-  # SIGN IN FORM
-
-  get("/user_sign_in", { :controller => "user_authentication", :action => "sign_in_form" })
-  # AUTHENTICATE AND STORE COOKIE
-  post("/user_verify_credentials", { :controller => "user_authentication", :action => "create_cookie" })
-
-  # SIGN OUT
-  get("/user_sign_out", { :controller => "user_authentication", :action => "destroy_cookies" })
-
-  #------------------------------
-
+  # Catch-all route
+  match "*path", to: "pages#home", via: :all
 end
