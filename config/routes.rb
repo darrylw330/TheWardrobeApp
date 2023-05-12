@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   post "/user_verify_credentials", to: "user_authentication#create_cookie"
   get "/user_sign_out", to: "user_authentication#destroy_cookies"
 
-  authenticated :user do
-    root to: "users#dashboard", as: "user_dashboard"
-  end
+  # TODO: fix later
+  # authenticated :user do
+  #   root to: "users#dashboard", as: "user_dashboard"
+  # end
 
   # Routes for the Outfit clothing resource:
   post "/insert_outfit_clothing", to: "outfit_clothings#create"
@@ -38,8 +39,8 @@ Rails.application.routes.draw do
 
   # get 'dashboard/index'
   get "/home", to: "pages#home"
-  get "/dashboard", to: "users#dashboard", as: "user_dashboard"
+  get "/dashboard", to: "dashboard#index"
 
   # Catch-all route
-  match "*path", to: "pages#home", via: :all
+  # match "*path", to: "pages#home", via: :all
 end

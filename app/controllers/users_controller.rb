@@ -10,11 +10,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def dashboard
-    @user = User.find(params[:id])
-    # Add any necessary logic for the user dashboard here
-  end
-
   private
 
   def user_params
