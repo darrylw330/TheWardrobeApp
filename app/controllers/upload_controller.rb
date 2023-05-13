@@ -6,6 +6,18 @@ class UploadController < ApplicationController
 
   def create
     # Logic to handle the image upload and save it in the database
-    # You will need to define the appropriate model and implement the upload logic here
+    @clothing = Clothing.new(clothing_params)
+    if @clothing.save
+      redirect_to user_profile_path, notice: "Clothing uploaded successfully!"
+    else
+      render :index
+    end
+  end
+
+  private
+
+  def clothing_params
+    params.require(:clothing).permit(:name, :image)
   end
 end
+
