@@ -4,6 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  brand      :string
+#  category   :string
 #  color      :string
 #  image      :string
 #  created_at :datetime         not null

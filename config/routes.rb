@@ -40,6 +40,8 @@ Rails.application.routes.draw do
 
   get "/home", to: "pages#home"
   get "/dashboard", to: "dashboard#index"
+  get '/generate', to: 'generate#index', as: 'generate'
+  
 
   # Catch-all route
   # match "*path", to: "pages#home", via: :all

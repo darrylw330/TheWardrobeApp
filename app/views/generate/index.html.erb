@@ -1,0 +1,17 @@
+<h1>Generated Outfit</h1>
+<%= link_to 'Go to Dashboard', user_dashboard_path %>
+
+<% if @top %>
+  <h3>Top:</h3>
+  <%= image_tag @top.image_url %>
+<% end %>
+
+<% if @bottom %>
+  <h3>Bottom:</h3>
+  <%= image_tag @bottom.image_url %>
+<% end %>
+
+<% if @shoes %>
+  <h3>Shoes:</h3>
+  <%= image_tag @shoes.image_url %>
+<% end %>
