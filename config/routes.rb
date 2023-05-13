@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "dashboard#index"
   get '/generate', to: 'generate#index', as: 'generate'
   get "/upload", to: "upload#index", as: "upload"
-
+  resources :clothings, only: [:new, :create]
 
   # Catch-all route
   # match "*path", to: "pages#home", via: :all
