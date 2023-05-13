@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/user_sign_in", to: "user_authentication#sign_in_form"
   post "/user_verify_credentials", to: "user_authentication#create_cookie"
   get "/user_sign_out", to: "user_authentication#destroy_cookies"
+  get "/profile", to: "profile#show", as: "user_profile"
 
   # TODO: fix later
   # authenticated :user do
@@ -37,7 +38,6 @@ Rails.application.routes.draw do
 
   # Other routes...
 
-  # get 'dashboard/index'
   get "/home", to: "pages#home"
   get "/dashboard", to: "dashboard#index"
 
