@@ -1,0 +1,7 @@
+<%= form_with(model: @clothing, url: create_clothing_path, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+  <%= form.submit "Upload" %>
+<% end %>
