@@ -19,10 +19,10 @@ class ClothingsController < ApplicationController
 
   def create
     the_clothing = Clothing.new
-    the_clothing.user_id = params.fetch("query_user_id")
+    the_clothing.user = @current_user
     the_clothing.brand = params.fetch("query_brand")
-    the_clothing.color = params.fetch("query_color")
-    the_clothing.image = params.fetch("query_image")
+    # the_clothing.color = params.fetch("query_color")
+    the_clothing.image = params.fetch("image")
 
     if the_clothing.valid?
       the_clothing.save
@@ -43,7 +43,7 @@ class ClothingsController < ApplicationController
 
     if the_clothing.valid?
       the_clothing.save
-      redirect_to("/clothings/#{the_clothing.id}", { :notice => "Clothing updated successfully."} )
+      redirect_to("/clothings/#{the_clothing.id}", { :notice => "Clothing updated successfully." })
     else
       redirect_to("/clothings/#{the_clothing.id}", { :alert => the_clothing.errors.full_messages.to_sentence })
     end
@@ -55,6 +55,6 @@ class ClothingsController < ApplicationController
 
     the_clothing.destroy
 
-    redirect_to("/clothings", { :notice => "Clothing deleted successfully."} )
+    redirect_to("/clothings", { :notice => "Clothing deleted successfully." })
   end
 end

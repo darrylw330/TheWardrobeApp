@@ -4,6 +4,7 @@
 #
 #  id              :integer          not null, primary key
 #  email           :string
+#  image           :string
 #  name            :string
 #  outfits_count   :integer
 #  password_digest :string
@@ -14,6 +15,7 @@ class User < ApplicationRecord
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :email, :presence => true
   has_secure_password
+  mount_uploader :image, ImageUploader
   # Add the name attribute to the list of accessible attributes
   attr_accessor :name
 
