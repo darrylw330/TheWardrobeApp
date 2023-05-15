@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post "/user_verify_credentials", to: "user_authentication#create_cookie"
   get "/user_sign_out", to: "user_authentication#destroy_cookies"
   get "/profile", to: "profile#show", as: "user_profile"
+  get '/dashboard', to: 'users#dashboard', as: 'user_dashboard'
 
   # TODO: fix later
   # authenticated :user do

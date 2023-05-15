@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   def current_user
     the_id = session[:user_id]
     
-    @current_user = User.where({ :id => the_id }).first
+    current_user = User.where({ :id => the_id }).first
   end
 
 

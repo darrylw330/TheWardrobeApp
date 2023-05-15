@@ -2,6 +2,9 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="/home">The Wardrobe App</a>
     <ul class="navbar-nav ml-auto">
+        <% if @current_user %>
+      <%= link_to "Back to Dashboard", user_dashboard_path(@current_user), class: "btn btn-primary" %>
+    <% end %>
       <% if @current_user.present? %>
         <li class="nav-item">
           <a class="nav-link" href="/user_sign_out">Sign Out</a>
