@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+root to: "application#root"
+
   # Routes for the User account:
   get "/user_sign_up", to: "user_authentication#sign_up_form"
   post "/insert_user", to: "user_authentication#create"
@@ -40,6 +42,7 @@ Rails.application.routes.draw do
 
   # Other routes...
 
+  get "/", to: "pages#home"
   get "/home", to: "pages#home"
   get "/dashboard", to: "dashboard#index"
   get '/generate', to: 'generate#index', as: 'generate'
