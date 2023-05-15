@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-root to: "application#root"
-get "/home", to: "pages#home"
+  root to: "pages#home"
 
   # Routes for the User account:
   get "/user_sign_up", to: "user_authentication#sign_up_form"
@@ -12,8 +11,7 @@ get "/home", to: "pages#home"
   post "/user_verify_credentials", to: "user_authentication#create_cookie"
   get "/user_sign_out", to: "user_authentication#destroy_cookies"
   get "/profile", to: "profile#show", as: "user_profile"
-  get '/dashboard', to: 'dashboard#index', as: 'user_dashboard'
-
+  get "/dashboard", to: "dashboard#index", as: "user_dashboard"
 
   # TODO: fix later
   # authenticated :user do
@@ -44,7 +42,7 @@ get "/home", to: "pages#home"
   # Other routes...
   get "/home", to: "pages#home"
   get "/dashboard", to: "dashboard#index"
-  get '/generate', to: 'generate#index', as: 'generate'
+  get "/generate", to: "generate#index", as: "generate"
   get "/upload", to: "upload#index", as: "upload"
   resources :clothings, only: [:new, :create]
 
