@@ -6,11 +6,21 @@
 <a href="/dashboard" class="btn btn-primary">Back to Dashboard</a>
 
 <div style="text-align: center;">
-<%= form_with(model: @clothing, url: insert_clothing_path, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
-  <%= form.submit "Upload" %>
-<% end %>
+  <%= form_with(model: @clothing, url: insert_clothing_path, method: :post, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+
+    <div class="field">
+      <%= form.label :brand %>
+      <%= form.text_field :query_brand %>
+    </div>
+
+    <!-- Add a hidden field to store the query_user_id -->
+    <%= form.hidden_field :query_user_id, value: @query_user_id %>
+
+    <%= form.submit "Upload" %>
+  <% end %>
 </div>
+

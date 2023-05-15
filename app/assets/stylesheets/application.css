@@ -86,3 +86,8 @@ body, h1, p {
 .links {
   text-decoration: none;
 }
+.file-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

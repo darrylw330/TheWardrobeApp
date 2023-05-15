@@ -19,3 +19,11 @@
   <h3>Shoes:</h3>
   <%= image_tag @shoes.image_url %>
 <% end %>
+
+<%= form_with(model: @clothing, url: insert_clothing_path, method: :post) do |form| %>
+  <!-- Other form fields -->
+
+  <%= form.hidden_field :query_user_id, value: @current_user.id %>
+
+  <%= form.submit "Submit" %>
+<% end %>
