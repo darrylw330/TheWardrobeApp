@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 root to: "application#root"
+get "/home", to: "pages#home"
 
   # Routes for the User account:
   get "/user_sign_up", to: "user_authentication#sign_up_form"
@@ -41,8 +42,6 @@ root to: "application#root"
   get "/delete_clothing/:path_id", to: "clothings#destroy"
 
   # Other routes...
-
-  get "/", to: "pages#home"
   get "/home", to: "pages#home"
   get "/dashboard", to: "dashboard#index"
   get '/generate', to: 'generate#index', as: 'generate'
