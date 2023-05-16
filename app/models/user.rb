@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_secure_password
   mount_uploader :image, ImageUploader
   # Add the name attribute to the list of accessible attributes
-  attr_accessor :name
+  # attr_accessor :name
 
   # Validate the presence of the name attribute
   validates :name, presence: true
