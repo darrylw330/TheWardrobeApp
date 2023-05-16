@@ -140,7 +140,7 @@ body, h1, p {
   background-color: #0056b3;
 }
 
-.sidepanel.active {
+.sidepanel.open {
   width: 200px;
 }
 
@@ -152,3 +152,4 @@ body, h1, p {
     display: none;
   }
 }
+
