@@ -19,7 +19,7 @@ class User < ApplicationRecord
   # attr_accessor :name
 
   # Validate the presence of the name attribute
-  validates :name, presence: true
+  validates :presence => true
 
   has_many(:clothings, { :class_name => "Clothing", :foreign_key => "user_id", :dependent => :destroy })
   has_many(:outfits, { :class_name => "Outfit", :foreign_key => "user_id", :dependent => :destroy })
