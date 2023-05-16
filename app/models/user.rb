@@ -5,6 +5,7 @@
 #  id              :integer          not null, primary key
 #  email           :string
 #  image           :string
+#  name            :string
 #  outfits_count   :integer
 #  password_digest :string
 #  created_at      :datetime         not null
@@ -19,7 +20,7 @@ class User < ApplicationRecord
   # attr_accessor :name
 
   # Validate the presence of the name attribute
-  validates :presence => true
+  # validates :name, presence: true
 
   has_many(:clothings, { :class_name => "Clothing", :foreign_key => "user_id", :dependent => :destroy })
   has_many(:outfits, { :class_name => "Outfit", :foreign_key => "user_id", :dependent => :destroy })
