@@ -20,6 +20,10 @@
   <body>
     <%= render "shared/nav" %>
     <%= render "shared/flash" %>
+    <% if @current_user %>
+     <%= render 'shared/sidebar' %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
