@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: generates
+#
+#  id         :integer          not null, primary key
+#  content    :text
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 class Generate < ApplicationRecord
   def self.random_outfit
     # Logic to generate a random outfit

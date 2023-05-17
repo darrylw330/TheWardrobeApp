@@ -5,7 +5,6 @@
 #  id              :integer          not null, primary key
 #  email           :string
 #  image           :string
-#  name            :string
 #  outfits_count   :integer
 #  password_digest :string
 #  created_at      :datetime         not null

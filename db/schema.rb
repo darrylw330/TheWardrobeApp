@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_16_140806) do
+ActiveRecord::Schema.define(version: 2023_05_17_175041) do
+
+  create_table "categories", force: :cascade do |t|
+    t.boolean "top", default: false
+    t.boolean "bottom", default: false
+    t.boolean "shoes", default: false
+    t.boolean "hat", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "clothings", force: :cascade do |t|
     t.integer "user_id"
