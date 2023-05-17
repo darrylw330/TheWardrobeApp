@@ -1,8 +1,7 @@
 <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm"
     id="pillNav"
     role="tablist"
-    style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);"
->
+    style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
   <li class="nav-item">
     <a class="nav-link rounded-5 <%= "active" if current_page?(user_profile_path) %>" id="profile-tab"  href="<%= user_profile_path %>" role="tab" aria-selected="<%= current_page?(user_profile_path) %>">
       Profile
@@ -21,3 +20,4 @@
     </a>
   </li>
 </ul>
+

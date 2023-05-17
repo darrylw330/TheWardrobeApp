@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/profile", to: "profile#show", as: "user_profile"
   get "/dashboard", to: "dashboard#index", as: "user_dashboard"
 
+  
   # TODO: fix later
   # authenticated :user do
   #   root to: "users#dashboard", as: "user_dashboard"

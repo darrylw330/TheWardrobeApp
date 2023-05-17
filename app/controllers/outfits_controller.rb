@@ -51,4 +51,8 @@ class OutfitsController < ApplicationController
 
     redirect_to("/outfits", { :notice => "Outfit deleted successfully."} )
   end
+
+  def generate
+    @outfit = Outfit.random_outfit
+  end
 end

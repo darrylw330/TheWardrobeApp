@@ -11,4 +11,5 @@
 class OutfitClothing < ApplicationRecord
   belongs_to(:clothing, { :required => true, :class_name => "Clothing", :foreign_key => "clothing_id" })
   belongs_to(:outfit, { :required => true, :class_name => "Outfit", :foreign_key => "outfit_id" })
+  # validates :category, :name, presence: true
 end

@@ -3,8 +3,6 @@
   <h1>Upload Pics Of Your Clothing</h1>
 </div>
 
-<a href="/dashboard" class="btn btn-primary">Back to Dashboard</a>
-
 <div style="text-align: center;">
   <%= form_with(model: @clothing, html: {multipart: true}, url: insert_clothing_path, method: :post, local: true) do |form| %>
     <div class="field">
