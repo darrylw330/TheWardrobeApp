@@ -10,13 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_17_175041) do
+ActiveRecord::Schema.define(version: 2023_05_17_181657) do
 
   create_table "categories", force: :cascade do |t|
-    t.boolean "top", default: false
-    t.boolean "bottom", default: false
-    t.boolean "shoes", default: false
-    t.boolean "hat", default: false
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,7 +25,7 @@ ActiveRecord::Schema.define(version: 2023_05_17_175041) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "category"
+    t.integer "category_id"
   end
 
   create_table "generates", force: :cascade do |t|

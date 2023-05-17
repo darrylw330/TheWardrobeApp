@@ -2,14 +2,14 @@
 #
 # Table name: clothings
 #
-#  id         :integer          not null, primary key
-#  brand      :string
-#  category   :string
-#  color      :string
-#  image      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :integer
+#  id          :integer          not null, primary key
+#  brand       :string
+#  color       :string
+#  image       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  category_id :integer
+#  user_id     :integer
 #
 class Clothing < ApplicationRecord
   belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id" })

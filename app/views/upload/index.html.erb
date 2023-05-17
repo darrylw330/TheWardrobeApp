@@ -12,11 +12,16 @@
 
     <div class="field">
       <%= form.label :brand %>
-      <%= form.text_field :query_brand %>
+      <%= form.text_field :brand %>
+    </div>
+
+    <div class="field">
+      <%= form.label :category_id %>
+      <%= form.collection_select :category_id, Category.all.order(:name), :id, :name %>
     </div>
 
     <!-- Add a hidden field to store the query_user_id -->
-    <%= form.hidden_field :query_user_id, value: @query_user_id %>
+    <%= form.hidden_field :user_id, value: @current_user.id %>
 
     <%= form.submit "Upload" %>
   <% end %>

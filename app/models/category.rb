@@ -3,10 +3,7 @@
 # Table name: categories
 #
 #  id         :integer          not null, primary key
-#  bottom     :boolean          default(FALSE)
-#  hat        :boolean          default(FALSE)
-#  shoes      :boolean          default(FALSE)
-#  top        :boolean          default(FALSE)
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

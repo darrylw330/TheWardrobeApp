@@ -20,8 +20,8 @@ class ClothingsController < ApplicationController
   def create
     the_clothing = Clothing.new
     the_clothing.user = @current_user
-    the_clothing.brand = params.fetch("query_brand")
-    # the_clothing.color = params.fetch("query_color")
+    the_clothing.brand = params.fetch("brand")
+    the_clothing.category_id = params.fetch("category_id")
     the_clothing.image = params.fetch("image")
 
     if the_clothing.valid?
