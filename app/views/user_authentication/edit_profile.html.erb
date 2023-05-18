@@ -9,10 +9,11 @@
         <label for="email_box">Email</label>
         <input id="email_box" name="query_email" value="<%= @current_user.email %>">
       </div>
-      <div>
-        <label for="outfits_count_box">Outfits count</label>
-        <input id="outfits_count_box" name="query_outfits_count" value="<%= @current_user.outfits_count %>">
-      </div>
+  <div>
+    <label for="username_box">Username</label>
+    <input id="username_box" name="query_username" value="<%= params[:query_username] %>">
+  </div>
+
 
       <div>
         <label for="password_box">Password</label>
