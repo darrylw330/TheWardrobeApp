@@ -32,6 +32,28 @@ class ClothingsController < ApplicationController
     end
   end
 
+  def insert_clothing
+    # Handle missing brand parameter
+    unless params[:query_brand].present?
+      redirect_to new_clothing_path, { :alert => "Brand parameter is missing or empty" }
+      return
+    end
+  
+    the_clothing = Clothing.new
+    the_clothing.user = @current_user
+    the_clothing.brand = params[:query_brand]
+    the_clothing.category_id = params[:category_id]
+    the_clothing.color = params[:query_color]
+    the_clothing.image = params[:query_image]
+  
+    if the_clothing.valid?
+      the_clothing.save
+      redirect_to("/clothings", { :notice => "Clothing created successfully." })
+    else
+      redirect_to("/clothings", { :alert => the_clothing.errors.full_messages.to_sentence })
+    end
+  end  
+
   def update
     the_id = params.fetch("path_id")
     the_clothing = Clothing.where({ :id => the_id }).at(0)

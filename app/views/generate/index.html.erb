@@ -1,6 +1,7 @@
 <%= render "dashboard/nav" %>
+
 <div style="text-align: center;">
-<h1>Generate Your Outfit</h1>
+  <h1>Generate Your Outfit</h1>
 </div>
 
 <% if @top %>
@@ -18,10 +19,12 @@
   <%= image_tag @shoes.image_url %>
 <% end %>
 
-<%= form_with(model: @clothing, url: insert_clothing_path, method: :post) do |form| %>
-  <!-- Other form fields -->
+<div class="text-center">
+  <%= form_with(model: @clothing, url: insert_clothing_path, method: :post) do |form| %>
+    <!-- Other form fields -->
 
-  <%= form.hidden_field :query_user_id, value: @current_user.id %>
+    <%= form.hidden_field :query_user_id, value: @current_user.id %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+    <%= form.button "Generate Random Outfit", class: "btn btn-primary" %>
+  <% end %>
+</div>
