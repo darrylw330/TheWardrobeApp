@@ -1,42 +1,43 @@
-<div>
-  <div>
-    <h1>List of all clothings</h1>
+<h1 class="text-center">List of all clothings</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center">Add a new clothing</h2>
+          <%= form_with(url: "/insert_clothing", method: "post", local: true) do |form| %>
+            <div class="form-group">
+              <%= form.label :query_user_id, "User" %>
+              <%= form.text_field :query_user_id, id: "user_id_box", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :query_brand, "Brand" %>
+              <%= form.text_field :query_brand, id: "brand_box", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :query_color, "Color" %>
+              <%= form.text_field :query_color, id: "color_box", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :query_image, "Image" %>
+              <%= form.text_field :query_image, id: "image_box", class: "form-control" %>
+            </div>
+
+            <div class="text-center">
+              <%= form.submit "Create clothing", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<hr>
 
-<div>
-  <div>
-    <h2>Add a new clothing</h2>
 
-    <%= form_with(url: "/insert_clothing", method: "post", local: true) do |form| %>
-      <div>
-        <%= form.label :query_user_id, "User" %>
-        <%= form.text_field :query_user_id, id: "user_id_box" %>
-      </div>
-
-      <div>
-        <%= form.label :query_brand, "Brand" %>
-        <%= form.text_field :query_brand, id: "brand_box" %>
-      </div>
-
-      <div>
-        <%= form.label :query_color, "Color" %>
-        <%= form.text_field :query_color, id: "color_box" %>
-      </div>
-
-      <div>
-        <%= form.label :query_image, "Image" %>
-        <%= form.text_field :query_image, id: "image_box" %>
-      </div>
-
-      <div>
-        <%= form.submit "Create clothing" %>
-      </div>
-    <% end %>
-  </div>
-</div>
 
 <hr>
 

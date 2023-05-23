@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "/user_sign_out", to: "user_authentication#destroy_cookies"
   get "/profile", to: "profile#show", as: "user_profile"
   get "/dashboard", to: "dashboard#index", as: "user_dashboard"
+  get '/insert_clothing', to: 'clothings#new', as: 'new_clothing'
+  post '/insert_clothing', to: 'clothings#insert_clothing'
 
   
   # TODO: fix later
