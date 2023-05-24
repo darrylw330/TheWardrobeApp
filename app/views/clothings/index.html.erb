@@ -1,10 +1,12 @@
 <h1 class="text-center">List of all clothings</h1>
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
         <div class="card-body">
-          <h2 class="text-center">Add a new clothing</h2>
+          <h2 class="card-title text-center">Add a new clothing</h2>
+
           <%= form_with(url: "/insert_clothing", method: "post", local: true) do |form| %>
             <div class="form-group">
               <%= form.label :query_user_id, "User" %>
@@ -35,6 +37,7 @@
     </div>
   </div>
 </div>
+
 
 
 
